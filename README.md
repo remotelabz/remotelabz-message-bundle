@@ -1,6 +1,6 @@
 # RemotelabzMessageBundle
 
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/crestic-urca/remotelabz-network-bundle/Tests/master) [![codecov](https://img.shields.io/codecov/c/github/crestic-urca/remotelabz-network-bundle)](https://codecov.io/gh/crestic-urca/remotelabz-network-bundle)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/crestic-urca/remotelabz-message-bundle/Tests/master) [![codecov](https://img.shields.io/codecov/c/github/crestic-urca/remotelabz-message-bundle)](https://codecov.io/gh/crestic-urca/remotelabz-message-bundle)
 
 RemotelabzMessageBundle is a bundle used by RemoteLabz to share messages between remotelabz components.
 

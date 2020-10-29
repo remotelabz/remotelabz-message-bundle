@@ -40,7 +40,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
       - name: Run test suite
-        run: ./vendor/bin/simple-phpunit --coverage-clover coverage.xml --colors=never
+        run: composer test
 
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v1.0.10
@@ -66,4 +66,4 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
       - name: Run test suite
-        run: ./vendor/bin/phpcs --standard=PSR2 --exclude=Generic.Files.LineLength ./Entity/ ./Tests/
+        run: composer phpcs

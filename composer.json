@@ -21,6 +21,13 @@
             "Tests/"
         ]
     },
+    "config": {
+        "process-timeout": 0
+    },
+    "scripts": {
+        "test": "./vendor/bin/simple-phpunit --coverage-clover coverage.xml --colors=never",
+        "phpcs": "./vendor/bin/phpcs --standard=PSR2 --exclude=Generic.Files.LineLength ./Tests/"
+    },
     "authors": [
         {
             "name": "Julien Hubert",
