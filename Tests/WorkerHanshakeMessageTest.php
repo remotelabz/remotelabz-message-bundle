@@ -13,4 +13,13 @@ class WorkerHandshakeMessageTest extends TestCase
 
         $this->assertInstanceOf(WorkerHandshakeMessage::class, $message);
     }
+
+    public function testGettersAndSetters()
+    {
+        $message = new WorkerHandshakeMessage('id');
+
+        $message->setId('id2');
+
+        $this->assertEquals('id2', $message->getId());
+    }
 }
