@@ -3,8 +3,7 @@
     "description": "Shared messages between remotelabz components.",
     "type": "symfony-bundle",
     "require": {
-        "php": "^7.3",
-        "symfony/messenger": "5.1.*"
+        "php": "^7.3"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "^5.1",
