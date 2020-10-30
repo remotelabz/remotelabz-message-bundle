@@ -15,6 +15,8 @@ class InstanceActionMessage
     const ACTION_DELETE = "delete";
     const ACTION_START = "start";
     const ACTION_STOP  = "stop";
+    const ACTION_CONNECT  = "connect";
+    const ACTION_DISCONNECT  = "disconnect";
 
     /**
      * @param string $content Descriptor of the instance (JSON-formatted).
