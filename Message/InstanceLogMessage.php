@@ -3,11 +3,11 @@
 namespace Remotelabz\Message\Message;
 
 use InvalidArgumentException;
-use ReflectionClass;
 
 class InstanceLogMessage
 {
     private $content;
+    private $scope;
     private $uuid;
     private $type;
 
@@ -16,14 +16,17 @@ class InstanceLogMessage
     const TYPE_ERROR = "error";
     const TYPE_WARNING = "warning";
 
-    public function __construct(string $uuid, string $content, string $type)
+    const SCOPE_PUBLIC = "public";
+    const SCOPE_PRIVATE = "private";
+
+    public function __construct(string $uuid, string $content, string $type, string $scope = self::SCOPE_PRIVATE)
     {
-        $reflection = new ReflectionClass(__CLASS__);
-        if (!in_array($type, $reflection->getConstants())) {
+        if (!in_array($type, [self::TYPE_DEBUG, self::TYPE_INFO, self::TYPE_WARNING, self::TYPE_ERROR])) {
             throw new InvalidArgumentException('Wrong type provided');
         }
 
         $this->content = $content;
+        $this->scope = $scope;
         $this->uuid = $uuid;
         $this->type = $type;
     }
@@ -59,12 +62,23 @@ class InstanceLogMessage
 
     public function setType(string $type): self
     {
-        $reflection = new ReflectionClass(__CLASS__);
-        if (!in_array($type, $reflection->getConstants())) {
+        if (!in_array($type, [self::TYPE_DEBUG, self::TYPE_INFO, self::TYPE_WARNING, self::TYPE_ERROR])) {
             throw new InvalidArgumentException('Wrong type provided');
         }
 
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getScope(): string
+    {
+        return $this->scope;
+    }
+
+    public function setScope(string $scope): self
+    {
+        $this->scope = $scope;
 
         return $this;
     }
