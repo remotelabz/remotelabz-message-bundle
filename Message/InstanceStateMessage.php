@@ -19,6 +19,7 @@ class InstanceStateMessage
     const STATE_DELETED = "deleted";
     const STATE_STARTING = "starting";
     const STATE_STOPPING = "stopping";
+    const STATE_EXPORTING = "exporting";
     const STATE_STARTED = "started";
     const STATE_STOPPED = "stopped";
     const STATE_ERROR = "error";
