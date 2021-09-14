@@ -20,6 +20,7 @@ class InstanceStateMessage
     const STATE_STARTING = "starting";
     const STATE_STOPPING = "stopping";
     const STATE_EXPORTING = "exporting";
+    const STATE_EXPORTED = "exported";
     const STATE_STARTED = "started";
     const STATE_STOPPED = "stopped";
     const STATE_ERROR = "error";
@@ -74,7 +75,7 @@ class InstanceStateMessage
 
     public function setState(string $state): self
     {
-        if (!in_array($state, [self::STATE_CREATED, self::STATE_CREATING, self::STATE_DELETED, self::STATE_DELETING, self::STATE_ERROR, self::STATE_STARTED, self::STATE_STARTING, self::STATE_STOPPED, self::STATE_STOPPING])) {
+        if (!in_array($state, [self::STATE_EXPORTING,self::STATE_EXPORTED,self::STATE_CREATED, self::STATE_CREATING, self::STATE_DELETED, self::STATE_DELETING, self::STATE_ERROR, self::STATE_STARTED, self::STATE_STARTING, self::STATE_STOPPED, self::STATE_STOPPING])) {
             throw new InvalidArgumentException('Wrong state provided');
         }
 
