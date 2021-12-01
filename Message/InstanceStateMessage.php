@@ -9,6 +9,8 @@ class InstanceStateMessage
     private $type;
     private $uuid;
     private $state;
+    // options must be an array
+    private $option;
 
     const TYPE_LAB = "lab";
     const TYPE_DEVICE = "device";
@@ -81,6 +83,23 @@ class InstanceStateMessage
 
         $this->state = $state;
 
+        return $this;
+    }
+
+    public function getOptions(): array
+    {
+        return $this->options;
+    }
+
+    public function setOptions(array $options): self
+    {
+        $this->options = $options;
+        return $this;
+    }
+
+    public function addOption($option): self
+    {
+        array_push($this->options, $option);
         return $this;
     }
 }
