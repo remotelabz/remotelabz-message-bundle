@@ -42,7 +42,7 @@ class InstanceLogMessage
         return $this;
     }
 
-    public function getUuid(): string
+    /*public function getUuid(): string
     {
         return $this->uuid;
     }
@@ -53,7 +53,7 @@ class InstanceLogMessage
 
         return $this;
     }
-
+*/
     public function getType(): string
     {
         return $this->type;

@@ -10,7 +10,7 @@ class InstanceStateMessage
     private $uuid;
     private $state;
     // options must be an array
-    private $option;
+    private $options;
 
     const TYPE_LAB = "lab";
     const TYPE_DEVICE = "device";
@@ -27,7 +27,7 @@ class InstanceStateMessage
     const STATE_STOPPED = "stopped";
     const STATE_ERROR = "error";
 
-    public function __construct(string $type = self::TYPE_DEVICE, string $uuid, string $state)
+    public function __construct(string $type = self::TYPE_DEVICE, string $uuid, string $state, array $options = null )
     {
         if (!in_array($state, [self::STATE_EXPORTING, self::STATE_EXPORTED, self::STATE_CREATED, self::STATE_CREATING, self::STATE_DELETED, self::STATE_DELETING, self::STATE_ERROR, self::STATE_STARTED, self::STATE_STARTING, self::STATE_STOPPED, self::STATE_STOPPING])) {
             throw new InvalidArgumentException('Wrong state provided');
@@ -40,6 +40,7 @@ class InstanceStateMessage
         $this->type = $type;
         $this->uuid = $uuid;
         $this->state = $state;
+        $this->options = $options;
     }
 
     public function getType(): string
