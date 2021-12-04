@@ -10,13 +10,13 @@ class InstanceLogMessageTest extends TestCase
 {
     public function testConstruct()
     {
-        $message = new InstanceLogMessage('content', 'uuid', InstanceLogMessage::TYPE_ERROR);
+        $message = new InstanceLogMessage('content', '0000', InstanceLogMessage::TYPE_ERROR);
 
         $this->assertInstanceOf(InstanceLogMessage::class, $message);
 
         $this->expectException(InvalidArgumentException::class);
 
-        $message = new InstanceLogMessage('content', 'uuid', 'another type value');
+        $message = new InstanceLogMessage('content', '000', 'another type value');
     }
 
     public function testGettersAndSetters()
@@ -24,11 +24,11 @@ class InstanceLogMessageTest extends TestCase
         $message = new InstanceLogMessage('', '', InstanceLogMessage::TYPE_ERROR);
 
         $message->setContent('content');
-        $message->setUuid('uuid');
+        
         $message->setType(InstanceLogMessage::TYPE_INFO);
 
         $this->assertEquals('content', $message->getContent());
-        $this->assertEquals('uuid', $message->getUuid());
+        //$this->assertEquals('uuid', $message->getUuid());
         $this->assertEquals(InstanceLogMessage::TYPE_INFO, $message->getType());
 
         $this->expectException(InvalidArgumentException::class);
