@@ -19,7 +19,7 @@ class InstanceLogMessage
     const SCOPE_PUBLIC = "public";
     const SCOPE_PRIVATE = "private";
 
-    public function __construct(string $content, string $type, string $scope = self::SCOPE_PRIVATE)
+    public function __construct(string $content,string $uuid, string $type, string $scope = self::SCOPE_PRIVATE)
     {
         if (!in_array($type, [self::TYPE_DEBUG, self::TYPE_INFO, self::TYPE_WARNING, self::TYPE_ERROR])) {
             throw new InvalidArgumentException('Wrong type provided');
@@ -28,6 +28,8 @@ class InstanceLogMessage
         $this->content = $content;
         $this->scope = $scope;
         $this->type = $type;
+        $this->uuid = $uuid;
+
     }
 
     public function getContent(): string
@@ -42,7 +44,7 @@ class InstanceLogMessage
         return $this;
     }
 
-    /*public function getUuid(): string
+    public function getUuid(): string
     {
         return $this->uuid;
     }
@@ -53,7 +55,7 @@ class InstanceLogMessage
 
         return $this;
     }
-*/
+
     public function getType(): string
     {
         return $this->type;
