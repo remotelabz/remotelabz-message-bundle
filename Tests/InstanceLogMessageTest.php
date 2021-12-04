@@ -10,18 +10,18 @@ class InstanceLogMessageTest extends TestCase
 {
     public function testConstruct()
     {
-        $message = new InstanceLogMessage('content', InstanceLogMessage::TYPE_ERROR);
+        $message = new InstanceLogMessage('content', '0000', InstanceLogMessage::TYPE_ERROR);
 
         $this->assertInstanceOf(InstanceLogMessage::class, $message);
 
         $this->expectException(InvalidArgumentException::class);
 
-        $message = new InstanceLogMessage('content', 'another type value');
+        $message = new InstanceLogMessage('content', '000', 'another type value');
     }
 
     public function testGettersAndSetters()
     {
-        $message = new InstanceLogMessage('', InstanceLogMessage::TYPE_ERROR);
+        $message = new InstanceLogMessage('', '', InstanceLogMessage::TYPE_ERROR);
 
         $message->setContent('content');
         
