@@ -19,6 +19,7 @@ class InstanceActionMessage
     const ACTION_DISCONNECT  = "disconnect";
     const ACTION_EXPORT = "export";
     const ACTION_DELETEDEV = "delete_device";
+    const ACTION_DELETEOS = "delete_os";
 
     /**
      * @param string $content Descriptor of the instance (JSON-formatted).
