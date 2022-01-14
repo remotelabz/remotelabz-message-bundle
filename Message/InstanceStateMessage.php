@@ -3,6 +3,7 @@
 namespace Remotelabz\Message\Message;
 
 use InvalidArgumentException;
+use ReflectionClass;
 
 class InstanceStateMessage
 {
@@ -26,10 +27,13 @@ class InstanceStateMessage
     const STATE_STARTED = "started";
     const STATE_STOPPED = "stopped";
     const STATE_ERROR = "error";
+    const STATE_RENAMED = "renamed";
 
     public function __construct(string $type = self::TYPE_DEVICE, string $uuid, string $state, array $options = null )
     {
-        if (!in_array($state, [self::STATE_EXPORTING, self::STATE_EXPORTED, self::STATE_CREATED, self::STATE_CREATING, self::STATE_DELETED, self::STATE_DELETING, self::STATE_ERROR, self::STATE_STARTED, self::STATE_STARTING, self::STATE_STOPPED, self::STATE_STOPPING])) {
+        $reflection = new ReflectionClass(__CLASS__);
+
+        if (!in_array($state, $reflection->getConstants())) {
             throw new InvalidArgumentException('Wrong state provided');
         }
 

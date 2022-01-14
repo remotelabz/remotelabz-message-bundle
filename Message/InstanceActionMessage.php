@@ -20,6 +20,7 @@ class InstanceActionMessage
     const ACTION_EXPORT = "export";
     const ACTION_DELETEDEV = "delete_device";
     const ACTION_DELETEOS = "delete_os";
+    const ACTION_RENAMEOS = "rename_os";
 
     /**
      * @param string $content Descriptor of the instance (JSON-formatted).
@@ -30,7 +31,7 @@ class InstanceActionMessage
     {
         $reflection = new ReflectionClass(__CLASS__);
         if (!in_array($action, $reflection->getConstants())) {
-            throw new InvalidArgumentException('Wrong action string provided');
+            throw new InvalidArgumentException('Wrong action provided');
         }
 
         $this->content = $content;
