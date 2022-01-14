@@ -3,6 +3,7 @@
 namespace Remotelabz\Message\Message;
 
 use InvalidArgumentException;
+use ReflectionClass;
 
 class InstanceStateMessage
 {
