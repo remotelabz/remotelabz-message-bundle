@@ -33,7 +33,7 @@ class InstanceStateMessage
     {
         $reflection = new ReflectionClass(__CLASS__);
 
-        if (!in_array($action, $reflection->getConstants())) {
+        if (!in_array($state, $reflection->getConstants())) {
             throw new InvalidArgumentException('Wrong state provided');
         }
 
