@@ -1,9 +1,9 @@
 <?php
 
-namespace Remotelabz\Message;
+namespace RemoteLabz\Message;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class RemotelabzMessageBundle extends Bundle
+class RemoteLabzMessageBundle extends Bundle
 {
 }
