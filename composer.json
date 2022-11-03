@@ -13,7 +13,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "RemoteLabz\\Message\\": ""
+            "Remotelabz\\Message\\": ""
         },
         "exclude-from-classmap": [
             "Resources/",
