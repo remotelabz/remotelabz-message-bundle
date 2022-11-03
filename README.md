@@ -1,6 +1,6 @@
 # RemotelabzMessageBundle
 
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/crestic-urca/remotelabz-message-bundle/Tests/master) [![codecov](https://img.shields.io/codecov/c/github/crestic-urca/remotelabz-message-bundle)](https://codecov.io/gh/crestic-urca/remotelabz-message-bundle)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/remotelabz/remotelabz-message-bundle/Tests/master) [![codecov](https://img.shields.io/codecov/c/github/remotelabz/remotelabz-message-bundle)](https://codecov.io/gh/remotelabz/remotelabz-message-bundle)
 
 RemotelabzMessageBundle is a bundle used by RemoteLabz to share messages between remotelabz components.
 
@@ -17,7 +17,7 @@ Applications that use Symfony Flex
 Open a command console, enter your project directory and execute:
 
 ```console
-$ composer require crestic-urca/remotelabz-network-bundle
+$ composer require remotelabz/remotelabz-network-bundle
 ```
 
 Applications that don't use Symfony Flex
@@ -29,7 +29,7 @@ Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
 
 ```console
-$ composer require crestic-urca/remotelabz-network-bundle
+$ composer require remotelabz/remotelabz-network-bundle
 ```
 
 ### Step 2: Enable the Bundle

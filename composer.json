@@ -1,5 +1,5 @@
 {
-    "name": "crestic-urca/remotelabz-message-bundle",
+    "name": "remotelabz/remotelabz-message-bundle",
     "description": "Shared messages between remotelabz components.",
     "type": "symfony-bundle",
     "require": {
