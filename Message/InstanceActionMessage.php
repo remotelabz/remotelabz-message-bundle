@@ -17,7 +17,8 @@ class InstanceActionMessage
     const ACTION_STOP  = "stop";
     const ACTION_CONNECT  = "connect";
     const ACTION_DISCONNECT  = "disconnect";
-    const ACTION_EXPORT = "export";
+    const ACTION_EXPORT_LAB = "export_lab";
+    const ACTION_EXPORT_DEV = "export_device";
     const ACTION_DELETEDEV = "delete_device";
     const ACTION_DELETEOS = "delete_os";
     const ACTION_RENAMEOS = "rename_os";
