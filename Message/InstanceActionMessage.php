@@ -15,6 +15,7 @@ class InstanceActionMessage
     const ACTION_DELETE = "delete";
     const ACTION_START = "start";
     const ACTION_STOP  = "stop";
+    const ACTION_RESET  = "reset";
     const ACTION_CONNECT  = "connect";
     const ACTION_DISCONNECT  = "disconnect";
     const ACTION_EXPORT_LAB = "export_lab";
