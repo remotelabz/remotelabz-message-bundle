@@ -23,6 +23,7 @@ class InstanceActionMessage
     const ACTION_DELETEDEV = "delete_device";
     const ACTION_DELETEOS = "delete_os";
     const ACTION_RENAMEOS = "rename_os";
+    const ACTION_COPY2WORKER_DEV ="copy_os";
 
     /**
      * @param string $content Descriptor of the instance (JSON-formatted).
