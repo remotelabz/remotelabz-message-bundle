@@ -30,6 +30,7 @@ class InstanceStateMessage
     const STATE_RESET = "reset";
     const STATE_ERROR = "error";
     const STATE_RENAMED = "renamed";
+    const STATE_OS_COPIED = "os_copied";
 
     public function __construct(string $type = self::TYPE_DEVICE, string $uuid, string $state, array $options = null )
     {
