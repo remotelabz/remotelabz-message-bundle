@@ -7,11 +7,10 @@ use ReflectionClass;
 
 class InstanceStateMessage
 {
-    private $type;
-    private $uuid;
-    private $state;
-    // options must be an array
-    private $options;
+    private string $type;
+    private string $uuid;
+    private string $state;
+    private array $options;
 
     const TYPE_LAB = "lab";
     const TYPE_DEVICE = "device";

@@ -4,8 +4,7 @@ namespace Remotelabz\Message\Message;
 
 class WorkerHandshakeMessage
 {
-    /** @var string */
-    protected $id;
+    private string $id;
 
     public function __construct(string $id)
     {

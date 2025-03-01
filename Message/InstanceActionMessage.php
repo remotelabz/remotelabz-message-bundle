@@ -7,9 +7,9 @@ use ReflectionClass;
 
 class InstanceActionMessage
 {
-    private $content;
-    private $uuid;
-    private $action;
+    private string $content;
+    private string $uuid;
+    private string $action;
 
     const ACTION_CREATE = "create";
     const ACTION_DELETE = "delete";
