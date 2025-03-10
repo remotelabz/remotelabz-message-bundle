@@ -44,9 +44,9 @@ class InstanceStateMessage
             throw new InvalidArgumentException('Wrong type provided');
         }
 
-        $this->type = $type;
         $this->uuid = $uuid;
         $this->state = $state;
+        $this->type = $type;
         $this->options = $options;
     }
 
