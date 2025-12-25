@@ -25,6 +25,8 @@ class InstanceActionMessage
     const ACTION_RENAMEOS = "rename_os";
     const ACTION_COPY2WORKER_DEV ="copy_os";
     const ACTION_COPYFROMFRONT = 'copyfromfront';
+    const ACTION_DELETEISO = 'delete_iso';
+    const ACTION_RENAMEISO = 'rename_iso';
 
     /**
      * @param string $content Descriptor of the instance (JSON-formatted).
