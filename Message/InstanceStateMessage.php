@@ -7,11 +7,10 @@ use ReflectionClass;
 
 class InstanceStateMessage
 {
-    private $type;
-    private $uuid;
-    private $state;
-    // options must be an array
-    private $options;
+    private string $type;
+    private string $uuid;
+    private string $state;
+    private array $options;
 
     const TYPE_LAB = "lab";
     const TYPE_DEVICE = "device";
@@ -22,14 +21,21 @@ class InstanceStateMessage
     const STATE_DELETED = "deleted";
     const STATE_STARTING = "starting";
     const STATE_STOPPING = "stopping";
+    const STATE_RESETTING = "resetting";
     const STATE_EXPORTING = "exporting";
     const STATE_EXPORTED = "exported";
     const STATE_STARTED = "started";
     const STATE_STOPPED = "stopped";
+    const STATE_RESET = "reset";
     const STATE_ERROR = "error";
     const STATE_RENAMED = "renamed";
+    const STATE_OS_COPIED = "os_copied";
+    const STATE_OS_DELETED = "os_deleted";
+    const STATE_FILE_COPIED = 'file_copied';
+    const STATE_ISO_COPIED = "iso_copied";
+    const STATE_ISO_DELETED = "iso_deleted";
 
-    public function __construct(string $type = self::TYPE_DEVICE, string $uuid, string $state, array $options = null )
+    public function __construct(string $state, string $uuid, string $type = self::TYPE_DEVICE, array $options = null )
     {
         $reflection = new ReflectionClass(__CLASS__);
 
@@ -41,9 +47,9 @@ class InstanceStateMessage
             throw new InvalidArgumentException('Wrong type provided');
         }
 
-        $this->type = $type;
         $this->uuid = $uuid;
         $this->state = $state;
+        $this->type = $type;
         $this->options = $options;
     }
 
@@ -82,7 +88,7 @@ class InstanceStateMessage
 
     public function setState(string $state): self
     {
-        if (!in_array($state, [self::STATE_CREATED, self::STATE_CREATING, self::STATE_DELETED, self::STATE_DELETING, self::STATE_ERROR, self::STATE_STARTED, self::STATE_STARTING, self::STATE_STOPPED, self::STATE_STOPPING])) {
+        if (!in_array($state, [self::STATE_CREATED, self::STATE_CREATING, self::STATE_DELETED, self::STATE_DELETING, self::STATE_ERROR, self::STATE_STARTED, self::STATE_STARTING, self::STATE_STOPPED, self::STATE_STOPPING, self::STATE_RESET, self::STATE_RESETTING])) {
             throw new InvalidArgumentException('Wrong state provided');
         }
 

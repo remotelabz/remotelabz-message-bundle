@@ -7,14 +7,15 @@ use ReflectionClass;
 
 class InstanceActionMessage
 {
-    private $content;
-    private $uuid;
-    private $action;
+    private string $content;
+    private string $uuid;
+    private string $action;
 
     const ACTION_CREATE = "create";
     const ACTION_DELETE = "delete";
     const ACTION_START = "start";
     const ACTION_STOP  = "stop";
+    const ACTION_RESET  = "reset";
     const ACTION_CONNECT  = "connect";
     const ACTION_DISCONNECT  = "disconnect";
     const ACTION_EXPORT_LAB = "export_lab";
@@ -22,6 +23,10 @@ class InstanceActionMessage
     const ACTION_DELETEDEV = "delete_device";
     const ACTION_DELETEOS = "delete_os";
     const ACTION_RENAMEOS = "rename_os";
+    const ACTION_COPY2WORKER_DEV ="copy_os";
+    const ACTION_COPYFROMFRONT = 'copyfromfront';
+    const ACTION_DELETEISO = 'delete_iso';
+    const ACTION_RENAMEISO = 'rename_iso';
 
     /**
      * @param string $content Descriptor of the instance (JSON-formatted).
