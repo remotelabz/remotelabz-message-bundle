@@ -6,10 +6,10 @@ use InvalidArgumentException;
 
 class InstanceLogMessage
 {
-    private $content;
-    private $scope;
-    private $uuid;
-    private $type;
+    private string $content;
+    private string $scope;
+    private string $type;
+    private string $uuid;
 
     const TYPE_INFO = "info";
     const TYPE_DEBUG = "debug";
