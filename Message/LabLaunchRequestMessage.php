@@ -1,39 +1,40 @@
 <?php
- 
+
 namespace Remotelabz\Message\Message;
- 
+
 class LabLaunchRequestMessage
 {
-    private string $labUuid;
-    private string $instancierUuid;
-    private string $instancierType; // 'user' ou 'group'
-    private int $fromExport;
- 
-    public function __construct(string $labUuid, string $instancierUuid, string $instancierType, int $fromExport = 0)
+    private string $labInstanceUuid;
+
+    private bool $autoStartDevices;
+
+    public function __construct(string $labInstanceUuid, bool $autoStartDevices = false)
     {
-        $this->labUuid = $labUuid;
-        $this->instancierUuid = $instancierUuid;
-        $this->instancierType = $instancierType;
-        $this->fromExport = $fromExport;
+        $this->labInstanceUuid = $labInstanceUuid;
+        $this->autoStartDevices = $autoStartDevices;
     }
- 
-    public function getLabUuid(): string
+
+    public function getLabInstanceUuid(): string
     {
-        return $this->labUuid;
+        return $this->labInstanceUuid;
     }
- 
-    public function getInstancierUuid(): string
+
+    public function setLabInstanceUuid(string $labInstanceUuid): self
     {
-        return $this->instancierUuid;
+        $this->labInstanceUuid = $labInstanceUuid;
+
+        return $this;
     }
- 
-    public function getInstancierType(): string
+
+    public function isAutoStartDevices(): bool
     {
-        return $this->instancierType;
+        return $this->autoStartDevices;
     }
- 
-    public function getFromExport(): int
+
+    public function setAutoStartDevices(bool $autoStartDevices): self
     {
-        return $this->fromExport;
+        $this->autoStartDevices = $autoStartDevices;
+
+        return $this;
     }
 }
