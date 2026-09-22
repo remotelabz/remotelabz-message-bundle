@@ -35,7 +35,7 @@ class InstanceStateMessage
     const STATE_ISO_COPIED = "iso_copied";
     const STATE_ISO_DELETED = "iso_deleted";
 
-    public function __construct(string $state, string $uuid, string $type = self::TYPE_DEVICE, array $options = null )
+    public function __construct(string $state, string $uuid, string $type = self::TYPE_DEVICE, ?array $options = null )
     {
         $reflection = new ReflectionClass(__CLASS__);
 
