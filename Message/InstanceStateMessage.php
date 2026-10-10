@@ -10,7 +10,7 @@ class InstanceStateMessage
     private string $type;
     private string $uuid;
     private string $state;
-    private array $options;
+    private ?array $options = null;
 
     const TYPE_LAB = "lab";
     const TYPE_DEVICE = "device";
@@ -35,7 +35,7 @@ class InstanceStateMessage
     const STATE_ISO_COPIED = "iso_copied";
     const STATE_ISO_DELETED = "iso_deleted";
 
-    public function __construct(string $state, string $uuid, string $type = self::TYPE_DEVICE, ?array $options = null )
+    public function __construct(string $type, string $uuid, string $state, ?array $options = null )
     {
         $reflection = new ReflectionClass(__CLASS__);
 
@@ -110,6 +110,10 @@ class InstanceStateMessage
 
     public function addOption($option): self
     {
+        if ($this->options === null) {
+            $this->options = [];
+        }
+
         array_push($this->options, $option);
         return $this;
     }

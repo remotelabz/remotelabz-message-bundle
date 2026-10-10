@@ -24,7 +24,7 @@
         "process-timeout": 0
     },
     "scripts": {
-        "test": "./vendor/bin/simple-phpunit --coverage-clover coverage.xml --colors=never",
+        "test": "SYMFONY_DEPRECATIONS_HELPER=weak ./vendor/bin/simple-phpunit --coverage-clover coverage.xml --colors=never",
         "phpcs": "./vendor/bin/phpcs --standard=PSR2 --exclude=Generic.Files.LineLength ./Tests/"
     },
     "authors": [
